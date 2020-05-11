@@ -13,7 +13,7 @@ public class LoginTest {
     @Test
     public void testLogin() {
         //创建安全管理器的工厂对象
-        IniSecurityManagerFactory factory = new IniSecurityManagerFactory("classpath:shiro-permission.ini");
+        IniSecurityManagerFactory factory = new IniSecurityManagerFactory("classpath:shiro-realm.ini");
         //获取安全管理器
         SecurityManager securityManager = factory.getInstance();
         //设置到当前的环境当中
@@ -21,7 +21,7 @@ public class LoginTest {
         //获取subject
         Subject subject = SecurityUtils.getSubject();
         //创建登录令牌
-        UsernamePasswordToken token = new UsernamePasswordToken("lisi", "888");
+        UsernamePasswordToken token = new UsernamePasswordToken("zhangsan", "666");
         //执行认证操作
         try {
             subject.login(token);
